@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on The Codex Arunel</title>
-    <link>https://osborngh.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on The Codex Arunel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Da Vinci</copyright><atom:link href="https://osborngh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© Da Vinci</copyright><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

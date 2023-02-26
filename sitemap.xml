@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://osborngh.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2023-02-26T01:18:50+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://osborngh.github.io/posts/post-1/</loc>
+    <loc>/posts/post-1/</loc>
     <lastmod>2023-02-26T00:52:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://osborngh.github.io/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2023-02-26T00:52:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://osborngh.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2023-02-26T00:52:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://osborngh.github.io/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>https://osborngh.github.io/tags/</loc>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

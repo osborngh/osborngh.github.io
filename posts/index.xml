@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on The Codex Arunel</title>
-    <link>https://osborngh.github.io/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on The Codex Arunel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="https://osborngh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Post 1</title>
-      <link>https://osborngh.github.io/posts/post-1/</link>
+      <link>/posts/post-1/</link>
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
-      <guid>https://osborngh.github.io/posts/post-1/</guid>
+      <guid>/posts/post-1/</guid>
       <description>Hello World</description>
     </item>
     
