@@ -9,12 +9,22 @@
     <copyright>© Da Vinci</copyright>
     <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="https://osborngh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>https://osborngh.github.io/about/</link>
+      <pubDate>Sun, 26 Feb 2023 01:18:50 +0000</pubDate>
+      
+      <guid>https://osborngh.github.io/about/</guid>
+      <description>Hello, Osborn here. I am currently a student in Ghana, Africa. I have always loved exploring topics related to Computer Science, Physics and Electronics. I play football and chess as sports and also watch movies or read when i&amp;rsquo;m not busy.
+Email Me for whatever reason you might have and I will get to you as soon as I can.</description>
+    </item>
+    
+    <item>
       <title>Post 1</title>
       <link>https://osborngh.github.io/posts/post-1/</link>
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
       <guid>https://osborngh.github.io/posts/post-1/</guid>
-      <description>Hello World!</description>
+      <description></description>
     </item>
     
   </channel>
