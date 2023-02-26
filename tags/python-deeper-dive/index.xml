@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on The Codex Arunel</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on The Codex Arunel</description>
+    <title>python-deeper-dive on The Codex Arunel</title>
+    <link>/tags/python-deeper-dive/</link>
+    <description>Recent content in python-deeper-dive on The Codex Arunel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/tags/python-deeper-dive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Deeper Dive Into Python - zip()</title>
       <link>/posts/post-1/</link>

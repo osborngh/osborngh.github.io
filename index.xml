@@ -19,12 +19,14 @@ Email Me for whatever reason you might have and I will get to you as soon as I c
     </item>
     
     <item>
-      <title>Post 1</title>
+      <title>A Deeper Dive Into Python - zip()</title>
       <link>/posts/post-1/</link>
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
       <guid>/posts/post-1/</guid>
-      <description>Hello World</description>
+      <description>The Python zip() function.
+Table Of Contents - [Introduction](#introduction) - [Declaration](#declaration) - [Examples](#examples) - [Conclusion](#conclusion)  Introduction The official docs for the zip() function can be found here
+Declaration Examples Conclusion </description>
     </item>
     
   </channel>
