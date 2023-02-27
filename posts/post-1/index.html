@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Post 1 - The Codex Arunel</title><link rel="icon" type="image/png" href=https://img.icons8.com/officel/16/000000/chevron-right.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Hello World" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>A Deeper Dive Into Python - zip() - The Codex Arunel</title><link rel="icon" type="image/png" href=https://img.icons8.com/officel/16/000000/chevron-right.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Deeper Dive: Python - zip() function" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"/>
-	<meta property="og:title" content="Post 1" />
-<meta property="og:description" content="Hello World" />
+	<meta property="og:title" content="A Deeper Dive Into Python - zip()" />
+<meta property="og:description" content="Deeper Dive: Python - zip() function" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/post-1/" />
 <meta property="article:published_time" content="2023-02-26T00:52:03+00:00" />
 <meta property="article:modified_time" content="2023-02-26T00:52:03+00:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Post 1"/>
-<meta name="twitter:description" content="Hello World"/>
+<meta name="twitter:title" content="A Deeper Dive Into Python - zip()"/>
+<meta name="twitter:description" content="Deeper Dive: Python - zip() function"/>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
@@ -30,6 +30,7 @@
 	
 	
 	
+		
 </head>
 <body>
         <div class="content"><header>
@@ -55,18 +56,150 @@
 <main>
 	<article>
 		<div class="title">
-			<h1 class="title">Post 1</h1>
-			<div class="meta">Posted on Feb 26, 2023</div>
+			<h1 class="title">A Deeper Dive Into Python - zip()</h1>
+			<div class="meta">Posted on Feb 26, 2023
+				<span>
+					
+						- 4 minutes read
+					
+				</span>
+			</div>
 		</div>
 		
 
 		<section class="body">
-			<p>Hello World</p>
+			<h1 id="table-of-contents">Table Of Contents</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#declaration">Declaration</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The zip() function in Python takes an input of two or more of the basic collections in Python; the <em>list</em>, <em>set</em>, <em>tuple</em> and <em>dict</em>.
+It returns an iterator (sequence) of tuples, where the first tuple contains the first elements of all the inputs, the second contains the second elements and so on.</p>
+<p>We&rsquo;ll see how to use the Python zip() function in this article.</p>
+<h2 id="declaration">Declaration</h2>
+<p>Syntax for the zip() function is as follows:</p>
+<p>From The Docs: zip(*iterables, strict=False)</p>
+<p>Pseudocode: zip(*iterables, strict=False) -&gt; Iterator(*Tuple)</p>
+<h2 id="basics">Basics</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#e6db74">&#34;Sandra&#34;</span>, <span style="color:#e6db74">&#34;Theo&#34;</span>]
+ages <span style="color:#f92672">=</span> [<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>]
+
+result <span style="color:#f92672">=</span> zip(names, ages)
+
+<span style="color:#66d9ef">print</span>(result)
+<span style="color:#75715e"># &lt;zip object at 0x7604ff7c82ad</span>
+</code></pre></div><p>We created two lists; <code>names</code> and <code>ages</code>.</p>
+<p>We then called the zip() function with <em>names</em> and <em>ages</em> as arguments and stored the result in a variable named as such.</p>
+<p>From what we have established, the output should look like this;
+<code>[(&quot;Alice&quot;, 13), (&quot;Bob&quot;, 14), (&quot;Sandra, 30&quot;), (&quot;Theo&quot;, 31)]</code>,
+since the zip() function puts <strong>each</strong> first member into one list, the second member into another list.
+Running this code gives another result though; <code>result</code> looks something like <code>&lt;zip object at 0x7604ff7c82ad</code>.
+It&rsquo;s a <em>memory address</em>, and is what Python returns when the zip function is invoked in this manner.
+This memory address actually points to the iterator containing the tuples. An iterator is actually not a concrete structure like <em>list</em> or <em>set</em> and as a result does not show the data it contains.
+We can easily obtain the zipped data by wrapping the iterator in a concrete object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#e6db74">&#34;Sandra&#34;</span>, <span style="color:#e6db74">&#34;Theo&#34;</span>]
+ages <span style="color:#f92672">=</span> [<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>]
+
+result <span style="color:#f92672">=</span> list(zip(names, ages))
+
+<span style="color:#66d9ef">print</span>(result)
+<span style="color:#75715e"># [(&#34;Alice&#34;, 13), (&#34;Bob&#34;, 14), (&#34;Sandra, 30&#34;), (&#34;Theo&#34;, 31)]</span>
+</code></pre></div><p>The code above now displays the expected <code>result</code> since the zip iterator has been converted to a list.
+You can have just as easily wrapped it in a tuple or set.</p>
+<p>The zip() function is also useful when you want to loop through more than one sequence at a time. Python allows you to loop through iterators so you do not need to wrap it in a list or tuple.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+doubles <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>]
+
+<span style="color:#75715e"># Without zip() function</span>
+<span style="color:#66d9ef">for</span> number <span style="color:#f92672">in</span> numbers:
+	<span style="color:#66d9ef">for</span> double <span style="color:#f92672">in</span> doubles:
+		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Double of &#34;</span> <span style="color:#f92672">+</span> number <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is &#34;</span> <span style="color:#f92672">+</span> double)
+
+<span style="color:#75715e"># With zip() function</span>
+<span style="color:#66d9ef">for</span> (number, double) <span style="color:#f92672">in</span> zip(numbers, doubles):
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Double of &#34;</span> <span style="color:#f92672">+</span> number <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; is &#34;</span> <span style="color:#f92672">+</span> double)
+
+<span style="color:#75715e"># Double of 1 is 2</span>
+<span style="color:#75715e"># Double of 2 is 4</span>
+<span style="color:#75715e"># Double of 3 is 6</span>
+</code></pre></div><h2 id="details">Details</h2>
+<p>The zip() function is <em>lazy</em>. This simply means that when you call the zip() function, the elements will not be processed until the iterator is used, that is, it is wrapped in a concrete sequence type or it is iterated on by a for loop.</p>
+<p>So far all the lists we have &ldquo;zipped&rdquo; together have been of equal lengths, so what happens when the iterables, that is list or set, do not have equivalent lengths. The Python documentation states three approaches to this issue.</p>
+<ol>
+<li>The zip() ignores other iterables immediately the shortest is exhausted, limiting the length of the result to the smallest sequence.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">res <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> el <span style="color:#f92672">in</span> zip([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>]):
+	res<span style="color:#f92672">.</span>append(el)
+
+<span style="color:#66d9ef">print</span>(res)
+<span style="color:#75715e"># [(1, 4), (2, 5), (3, 6)]</span>
+</code></pre></div><ol start="2">
+<li>Padding with a constant value (None) to make all iterables have equal length.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> itertools
+
+first <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;F&#34;</span>, <span style="color:#e6db74">&#34;S&#34;</span>, <span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;F&#34;</span>]
+second <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+
+res <span style="color:#f92672">=</span> itertools<span style="color:#f92672">.</span>zip_longest(first, second)
+<span style="color:#66d9ef">print</span>(list(res))
+<span style="color:#75715e"># [(&#34;F&#34;, 1), (&#34;S&#34;, 2), (&#34;T&#34;, 3), (&#34;F&#34;, None)]</span>
+
+</code></pre></div><ol start="3">
+<li>Enabling <em>strict</em> mode to raise a ValueError when the lengths of iterables being &ldquo;zipped&rdquo; are not the same.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+res <span style="color:#f92672">=</span> list(zip(range(<span style="color:#ae81ff">3</span>), range(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span>), strict<span style="color:#f92672">=</span>True))
+<span style="color:#66d9ef">print</span>(res)
+
+<span style="color:#75715e"># ValueError: zip() argument 2 is longer than argument 1</span>
+
+</code></pre></div><p>The zip() function returns an empty iterator if called with no arguments and returns a 1-tuple iterator if its called with only one iterable.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We discussed what the Python zip() function is and its purpose.
+We saw how to &ldquo;zip&rdquo; two or more sets together and return the values. We again saw how to loop through &ldquo;zipped&rdquo; sets.
+Again, we learnt the various ways zip() could be used even if our iterables do not have the same length.</p>
+<h2 id="resources">Resources</h2>
+<p>The official docs for the zip() function can be found <a href="https://docs.python.org/3/library/functions.html#zip">here</a>.</p>
 
 		</section>
 
+		<div class="prev-post">
+			
+			
+			
+		</div>
+
+		<div class="next-post">
+			
+			
+			<a href="../../about/">
+				About→
+			</a>
+			
+			
+		</div>
+
 		<div class="post-tags">
 			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="../../tags/python">python</a></li>
+					
+					<li><a href="../../tags/deeper-dive-python">deeper-dive-python</a></li>
+					
+					<li><a href="../../tags/zip">zip</a></li>
+					
+				</ul>
+			</nav>
 			
 			
 		</div>
@@ -74,6 +207,7 @@
 </main>
 <footer>
   <div style="display:flex"><a class="soc" href="https://github.com/osborngh" rel="me" title="GitHub"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="mailto:osbornghdev@gmail.com" rel="me" title="email"><i data-feather="email"></i></a>
     <a class="border"></a></div>
   <div class="footer-info">
     2023  © Da Vinci |  <a

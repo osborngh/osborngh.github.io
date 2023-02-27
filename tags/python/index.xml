@@ -14,9 +14,8 @@
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
       <guid>/posts/post-1/</guid>
-      <description>The Python zip() function.
-Table Of Contents - [Introduction](#introduction) - [Declaration](#declaration) - [Examples](#examples) - [Conclusion](#conclusion)  Introduction The official docs for the zip() function can be found here
-Declaration Examples Conclusion </description>
+      <description>Table Of Contents  Introduction Declaration Basics Details Conclusion Resources  Introduction The zip() function in Python takes an input of two or more of the basic collections in Python; the list, set, tuple and dict. It returns an iterator (sequence) of tuples, where the first tuple contains the first elements of all the inputs, the second contains the second elements and so on.
+We&amp;rsquo;ll see how to use the Python zip() function in this article.</description>
     </item>
     
   </channel>
