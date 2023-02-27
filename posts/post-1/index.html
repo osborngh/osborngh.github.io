@@ -129,7 +129,8 @@ doubles <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</spa
 <span style="color:#75715e"># Double of 3 is 6</span>
 </code></pre></div><h2 id="details">Details</h2>
 <p>The zip() function is <em>lazy</em>. This simply means that when you call the zip() function, the elements will not be processed until the iterator is used, that is, it is wrapped in a concrete sequence type or it is iterated on by a for loop.</p>
-<p>So far all the lists we have &ldquo;zipped&rdquo; together have been of equal lengths, so what happens when the iterables, that is list or set, do not have equivalent lengths. The Python documentation states three approaches to this issue.</p>
+<p>So far all the lists we have &ldquo;zipped&rdquo; together have been of equal lengths, so what happens when the iterables, that is list or set, do not have equivalent lengths.</p>
+<p>The Python documentation states three approaches to this issue;</p>
 <ol>
 <li>The zip() ignores other iterables immediately the shortest is exhausted, limiting the length of the result to the smallest sequence.</li>
 </ol>
@@ -140,7 +141,7 @@ doubles <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</spa
 <span style="color:#66d9ef">print</span>(res)
 <span style="color:#75715e"># [(1, 4), (2, 5), (3, 6)]</span>
 </code></pre></div><ol start="2">
-<li>Padding with a constant value (None) to make all iterables have equal length.</li>
+<li>Padding with a constant value (None) to make all iterables have equal length. In this case, itertools.zip_longest() is used instead of zip().</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> itertools
 
@@ -177,9 +178,7 @@ Again, we learnt the various ways zip() could be used even if our iterables do n
 		<div class="next-post">
 			
 			
-			<a href="../../about/">
-				About→
-			</a>
+			
 			
 			
 		</div>
@@ -195,6 +194,10 @@ Again, we learnt the various ways zip() could be used even if our iterables do n
 					<li><a href="../../tags/deeper-dive-python">deeper-dive-python</a></li>
 					
 					<li><a href="../../tags/zip">zip</a></li>
+					
+					<li><a href="../../tags/computer-science">computer-science</a></li>
+					
+					<li><a href="../../tags/programming">programming</a></li>
 					
 				</ul>
 			</nav>
