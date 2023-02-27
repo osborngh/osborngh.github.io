@@ -97,11 +97,11 @@ result <span style="color:#f92672">=</span> zip(names, ages)
 <p>We then called the zip() function with <em>names</em> and <em>ages</em> as arguments and stored the result in a variable named as such.</p>
 <p>From what we have established, the output should look like this;
 <code>[(&quot;Alice&quot;, 13), (&quot;Bob&quot;, 14), (&quot;Sandra, 30&quot;), (&quot;Theo&quot;, 31)]</code>,
-since the zip() function puts <strong>each</strong> first member into one list, the second member into another list.
-Running this code gives another result though; <code>result</code> looks something like <code>&lt;zip object at 0x7604ff7c82ad</code>.
+since the zip() function puts <strong>each</strong> first member into one list, the second member into another list.</p>
+<p>Running this code gives another result though; <code>result</code> looks something like <code>&lt;zip object at 0x7604ff7c82ad</code>.
 It&rsquo;s a <em>memory address</em>, and is what Python returns when the zip function is invoked in this manner.
-This memory address actually points to the iterator containing the tuples. An iterator is actually not a concrete structure like <em>list</em> or <em>set</em> and as a result does not show the data it contains.
-We can easily obtain the zipped data by wrapping the iterator in a concrete object.</p>
+This memory address actually points to the iterator containing the tuples. An iterator is actually not a concrete structure like <em>list</em> or <em>set</em> and as a result does not show the data it contains.</p>
+<p>We can easily obtain the zipped data by wrapping the iterator in a concrete object.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#e6db74">&#34;Sandra&#34;</span>, <span style="color:#e6db74">&#34;Theo&#34;</span>]
 ages <span style="color:#f92672">=</span> [<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>]
 
