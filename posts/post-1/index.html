@@ -2,17 +2,17 @@
 <html><head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>A Deep Dive Into Python - zip() - The Codex Arundel</title><link rel="icon" type="image/png" href=https://img.icons8.com/officel/16/000000/chevron-right.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Deep Dive: Python - zip() function" />
+	<meta name="description" content="A not so surface view into the Python zip() function" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"/>
 	<meta property="og:title" content="A Deep Dive Into Python - zip()" />
-<meta property="og:description" content="Deep Dive: Python - zip() function" />
+<meta property="og:description" content="A not so surface view into the Python zip() function" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/post-1/" />
 <meta property="article:published_time" content="2023-02-26T00:52:03+00:00" />
 <meta property="article:modified_time" content="2023-02-26T00:52:03+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A Deep Dive Into Python - zip()"/>
-<meta name="twitter:description" content="Deep Dive: Python - zip() function"/>
+<meta name="twitter:description" content="A not so surface view into the Python zip() function"/>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
@@ -55,15 +55,29 @@
 	</div>
 	<nav>
 		
+		
 		<a href="../../">Home</a>
+		
+		
 		
 		<a href="../../posts">All Posts</a>
 		
+		
+		
 		<a href="../../about">About</a>
+		
+		
 		
 		<a href="../../tags">Tags</a>
 		
-		| <span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		
+		
+		<a href="https://www.paypal.me/davincigh" target="_blank">Support</a>
+		
+		
+		| <a href="#">
+			<span id="dark-mode-toggle" onclick="toggleTheme()"></span>
+		</a>
 		<script src="../../js/themetoggle.js"></script>
 		
 	</nav>
@@ -84,16 +98,10 @@
 		
 
 		<section class="body">
-			<h1 id="table-of-contents">Table Of Contents</h1>
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#declaration">Declaration</a></li>
-<li><a href="#basics">Basics</a></li>
-<li><a href="#details">Details</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
-<li><a href="#resources">Resources</a></li>
-</ul>
-<h2 id="introduction">Introduction</h2>
+			
+
+
+			<h2 id="introduction">Introduction</h2>
 <p>The zip() function in Python takes an input of two or more of the basic collections in Python; the <em>list</em>, <em>set</em>, <em>tuple</em> and <em>dict</em>.
 It returns an iterator (sequence) of tuples, where the first tuple contains the first elements of all the inputs, the second contains the second elements and so on.</p>
 <p>We&rsquo;ll see how to use the Python zip() function in this article.</p>
@@ -143,7 +151,7 @@ doubles <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</spa
 <span style="color:#75715e"># Double of 1 is 2</span>
 <span style="color:#75715e"># Double of 2 is 4</span>
 <span style="color:#75715e"># Double of 3 is 6</span>
-</code></pre></div><h2 id="details">Details</h2>
+</code></pre></div><h2 id="more-information">More Information</h2>
 <p>The zip() function is <em>lazy</em>. This simply means that when you call the zip() function, the elements will not be processed until the iterator is used, that is, it is wrapped in a concrete sequence type or it is iterated on by a for loop.</p>
 <p>So far all the lists we have &ldquo;zipped&rdquo; together have been of equal lengths, so what happens when the iterables, that is list or set, do not have equivalent lengths.</p>
 <p>The Python documentation states three approaches to this issue;</p>
@@ -181,7 +189,8 @@ res <span style="color:#f92672">=</span> list(zip(range(<span style="color:#ae81
 We saw how to &ldquo;zip&rdquo; two or more sets together and return the values. We again saw how to loop through &ldquo;zipped&rdquo; sets.
 Again, we learnt the various ways zip() could be used even if our iterables do not have the same length.</p>
 <h2 id="resources">Resources</h2>
-<p>The official docs for the zip() function can be found <a href="https://docs.python.org/3/library/functions.html#zip">here</a>.</p>
+<p>The official docs for the zip() function can be found <a href="https://docs.python.org/3/library/functions.html#zip" target="_blank" >here</a>
+.</p>
 
 		</section>
 
