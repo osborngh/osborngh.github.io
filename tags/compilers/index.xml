@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>computer-science on The Codex Arundel</title>
-    <link>/tags/computer-science/</link>
-    <description>Recent content in computer-science on The Codex Arundel</description>
+    <title>compilers on The Codex Arundel</title>
+    <link>/tags/compilers/</link>
+    <description>Recent content in compilers on The Codex Arundel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 05 Mar 2023 00:52:41 +0000</lastBuildDate><atom:link href="/tags/computer-science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 00:52:41 +0000</lastBuildDate><atom:link href="/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Speeding Up Rust With Mold</title>
       <link>/posts/post-2/</link>
@@ -17,17 +17,6 @@
       <description>Work In Progress Introduction Rust is an incredible language. It&amp;rsquo;s quite obvious when it was, as at 2022 was the most loved programming language for seven years, according to a survey made by Stack Overflow .
 Guaranteeing memory-safety and thread-safety without even having a runtime or garbage collector. Rust again provides us with a very smart compiler, top-notch tooling whilst being blazingly fast and highly memory-efficient.
 Despite all these perks, everyone who uses Rust especially in projects with lots of dependencies can attest to the fact of very long build times in Rust.</description>
-    </item>
-    
-    <item>
-      <title>A Deep Dive Into Python - zip()</title>
-      <link>/posts/post-1/</link>
-      <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
-      
-      <guid>/posts/post-1/</guid>
-      <description>Introduction The zip() function in Python takes an input of two or more of the basic collections in Python; the list, set, tuple and dict. It returns an iterator (sequence) of tuples, where the first tuple contains the first elements of all the inputs, the second contains the second elements and so on.
-We&amp;rsquo;ll see how to use the Python zip() function in this article.
-Declaration Syntax for the zip() function is as follows:</description>
     </item>
     
   </channel>

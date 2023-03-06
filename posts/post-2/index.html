@@ -2,17 +2,17 @@
 <html><head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Speeding Up Rust With Mold - The Codex Arundel</title><link rel="icon" type="image/png" href=https://img.icons8.com/officel/16/000000/chevron-right.png /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Improving Rust Build Times With Mold, The Magical Linker" />
+	<meta name="description" content="Improving Rust Build Times With Mold, The Magical Linker." />
 	<meta property="og:image" content="https://raw.githubusercontent.com/athul/archie/master/images/archie-dark.png"/>
 	<meta property="og:title" content="Speeding Up Rust With Mold" />
-<meta property="og:description" content="Improving Rust Build Times With Mold, The Magical Linker" />
+<meta property="og:description" content="Improving Rust Build Times With Mold, The Magical Linker." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/post-2/" />
 <meta property="article:published_time" content="2023-03-05T00:52:41+00:00" />
 <meta property="article:modified_time" content="2023-03-05T00:52:41+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Speeding Up Rust With Mold"/>
-<meta name="twitter:description" content="Improving Rust Build Times With Mold, The Magical Linker"/>
+<meta name="twitter:description" content="Improving Rust Build Times With Mold, The Magical Linker."/>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
 			<div class="meta">Posted on Mar 5, 2023
 				<span>
 					
-						- 3 minutes read
+						- 4 minutes read
 					
 				</span>
 			</div>
@@ -110,7 +110,7 @@ according to a <a href="https://survey.stackoverflow.co/2022/#section-most-loved
 .</p>
 <p>Guaranteeing memory-safety and thread-safety without even having a runtime or garbage collector.
 Rust again provides us with a very smart compiler, top-notch tooling whilst being blazingly fast and highly memory-efficient.</p>
-<p>Despite all these perks, build times in Rust are really nothing to write home about.
+<p>Despite all these perks, everyone who uses Rust especially in projects with lots of dependencies can attest to the fact of very long build times in Rust.
 There are many reasons for this but one of the major ones has to do with the linker it uses by default.</p>
 <p>Rust during the link stage invokes <code>cc</code>, the unix interface for the c compiler, usually set to GNU <code>gcc</code>, to link stuff which in turn invokes the GNU <code>ld</code> linker.
 This linker has been around for more than two decades and is gradually showing its age, being orders of magnitude slower than current alternatives.</p>
@@ -124,15 +124,18 @@ The build phase of a program written in a compiled language involve two <strong>
 <li>The linker combines these files together to form one executable or a shared library.</li>
 </ul>
 <h2 id="what-is-mold">What is Mold</h2>
-<p><strong>Mold</strong>, from its official docs, &ldquo;mold is a faster drop-in replacement for existing Unix linkers&rdquo;.
+<p>From its official docs, &ldquo;mold is a faster drop-in replacement for existing Unix linkers&rdquo;.
 This means Mold has roughly the same interface as other Unix linkers allowing us to swap them without having any complications.
 This is what makes it possible for us to use with Rust even though its not officially supported.</p>
+<p>The reason why <strong>Mold</strong> is faster than existing Unix linkers is because of the algorithms and techniques it employs.
+Another reason is because of parallelization of the linker. It uses all available cores to get stuff done quickly.</p>
+<p>Existing Unix linkers, usually being decades older were not designed take full advantage of modern techniques and algorithms.</p>
 <h2 id="installing-mold">Installing Mold</h2>
 <p>As at now, <strong>Mold</strong> officially supports only Linux-based systems. You can either obtain prebuilt binaries or compile Mold from its source yourself.
 If you want to go the prebuilt binary route, try using your package manager to install mold, for example if you are on Ubuntu you would do;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ubuntu</span>
 sudo apt-get install mold
-</code></pre></div><p>If you could not get mold from your operating systems package manager, congratulations, you are only left with one option, building from source.</p>
+</code></pre></div><p>If you could not install <strong>Mold</strong> from your package manager, congratulations, you are only left with one option, building from source.</p>
 <p><strong>Building From Source</strong></p>
 <p><strong>Requirements</strong></p>
 <ol>
@@ -145,29 +148,60 @@ sudo apt-get install mold
 <li>Move into any directory you want to build <strong>Mold</strong> in.</li>
 <li>Run the following commands in your shell.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">	git clone https://github.com/rui314/mold.git
-	mkdir mold/build
-	cd mold/build
-	git checkout v1.10.1
-	../install-build-deps.sh
-	cmake -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_CXX_COMPILER<span style="color:#f92672">=</span>c++ ..
-	cmake --build . -j <span style="color:#66d9ef">$(</span>nproc<span style="color:#66d9ef">)</span>
-	sudo cmake --install .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/rui314/mold.git
+mkdir mold/build
+cd mold/build
+git checkout v1.10.1
+../install-build-deps.sh
+cmake -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Release -DCMAKE_CXX_COMPILER<span style="color:#f92672">=</span>c++ ..
+cmake --build . -j <span style="color:#66d9ef">$(</span>nproc<span style="color:#66d9ef">)</span>
+sudo cmake --install .
 </code></pre></div><p>When the process is done you should have a <strong>Mold</strong> installation. Add it to your PATH variable if its not already on it.</p>
 <h2 id="using-mold">Using Mold</h2>
-<p>Now to use <strong>Mold</strong>, first create a rust project with any name of your choice and move into the project directory.</p>
+<p><strong>With Cargo</strong></p>
+<p>Now to use <strong>Mold</strong> with cargo, Rust&rsquo;s multipurpose tool, first create a rust project or open an existing one which you would want to use <strong>Mold</strong> as the project linker.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cargo new using_mold
 cd using_mold
 </code></pre></div><p>Create a new file, <code>.config/cargo.toml</code> in the project root directory. You may need to create the folder first.</p>
-<p>Add this to the file you just created</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir .config
+touch .config/cargo.toml
+</code></pre></div><p>Add this linker configuration to the <code>.config/cargo.toml</code> file you just created.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">x86_64</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">unknown</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">linux</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">gnu</span>] 
 <span style="color:#a6e22e">linker</span> = <span style="color:#e6db74">&#34;clang&#34;</span> 
 <span style="color:#a6e22e">rustflags</span> = [<span style="color:#e6db74">&#34;-C&#34;</span>, <span style="color:#e6db74">&#34;link-arg=-fuse-ld=/usr/bin/mold&#34;</span>]
-</code></pre></div><p>Now you can write your <strong>Rust</strong> code just as you did before without changing anything because <strong>Mold</strong> as mentioned earlier is a drop-in replacement.</p>
-<p>You could also place this same code in your <code>~/.cargo/config.toml</code> file if you would want to use <strong>Mold</strong> as your default linker for every new project you start.</p>
-<p>Note: if you get errors with the above step try replacing the <code>/usr/bin/mold</code> with the location of the <strong>Mold</strong> binary you built earlier.</p>
+</code></pre></div><p>Now you can write your <strong>Rust</strong> code just as you did before without changing anything because <strong>Mold</strong>, as mentioned earlier is a drop-in replacement.</p>
+<p>You could also place this toml code in your <code>~/.cargo/config.toml</code> file, if you would want to switch to <strong>Mold</strong> as your default linker for every new project you start.</p>
+<p><strong>Without Cargo</strong></p>
+<p>If for some reason you decide not to use cargo for your project, you can still use <strong>Mold</strong> to link your project. Whatever your project structure is, start your compilation process with the <code>RUSTFLAGS</code> environment variable set like so;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># main.rs is assumed to have the main function.</span>
+<span style="color:#75715e"># lib.rs is assumed to have library code.</span>
+
+<span style="color:#75715e"># Executable</span>
+RUSTFLAGS<span style="color:#f92672">=</span>-Clinker<span style="color:#f92672">=</span>/usr/bin/mold rustc -o cookie main.rs
+
+<span style="color:#75715e"># Library</span>
+RUSTFLAGS<span style="color:#f92672">=</span>-Clinker<span style="color:#f92672">=</span>/usr/bin/mold rustc --crate-type<span style="color:#f92672">=</span>lib lib.rs
+</code></pre></div><p>Note: if you got errors with the steps above, try replacing the <code>/usr/bin/mold</code> with the location of the <strong>Mold</strong> binary you built earlier.</p>
 <h2 id="benchmarking-mold">Benchmarking Mold</h2>
-<p>At this point, I would like to test <strong>Mold</strong> against <strong>GNU ld</strong> with a simple program.</p>
+<p>We&rsquo;ll be comparing the link speeds of  <strong>Mold</strong>, <strong>GNU ld</strong> and another well known linker, <strong>Clang lld</strong>.</p>
+<p>To increase the workload of the linker, we&rsquo;ll be using an external dependency. I decided to go with the <a href="www.bevyengine.org" >Bevy</a>
+ library.
+It&rsquo;s quite popular in the Rust community and is relatively easy to get started with.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">
+</code></pre></div><p><strong>Results</strong></p>
+<ol>
+<li>
+<p><strong>Mold</strong> =&gt;</p>
+</li>
+<li>
+<p><strong>GNU ld</strong> =&gt;</p>
+</li>
+<li>
+<p><strong>Clang lld</strong> =&gt;</p>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The speed <strong>Mold</strong> offers increases with increasing dependencies so is observed in larger projects. Using a faster linker with Rust can improve the software development cycle.</p>
 
 		</section>
 
@@ -177,11 +211,11 @@ cd using_mold
 			<nav class="nav tags">
 				<ul class="tags">
 					
+					<li><a href="../../tags/computer-science">computer-science&#34;</a></li>
+					
 					<li><a href="../../tags/rust">rust</a></li>
 					
-					<li><a href="../../tags/computer-science">computer-science</a></li>
-					
-					<li><a href="../../tags/compiler">compiler</a></li>
+					<li><a href="../../tags/compilers">compilers</a></li>
 					
 				</ul>
 			</nav>
@@ -192,6 +226,7 @@ cd using_mold
 </main>
 <footer>
   <div style="display:flex"><a class="soc" href="https://github.com/osborngh" rel="me" title="GitHub"><i data-feather="github"></i></a>
+    <a class="border"></a><a class="soc" href="mailto:osbornghdev@gmail.com" rel="me" title="Gmail"><i data-feather="mail"></i></a>
     <a class="border"></a></div>
   <div class="footer-info">
     2023  © Da Vinci |  <a

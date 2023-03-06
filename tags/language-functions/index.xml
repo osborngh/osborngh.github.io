@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on The Codex Arundel</title>
-    <link>/tags/python/</link>
-    <description>Recent content in python on The Codex Arundel</description>
+    <title>language-functions on The Codex Arundel</title>
+    <link>/tags/language-functions/</link>
+    <description>Recent content in language-functions on The Codex Arundel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/tags/language-functions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Deep Dive Into Python - zip()</title>
       <link>/posts/post-1/</link>

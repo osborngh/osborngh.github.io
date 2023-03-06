@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 26 Feb 2023 00:52:03 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 00:52:41 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>compilers</title>
+      <link>/tags/compilers/</link>
+      <pubDate>Sun, 05 Mar 2023 00:52:41 +0000</pubDate>
+      
+      <guid>/tags/compilers/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>computer-science</title>
       <link>/tags/computer-science/</link>
-      <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
+      <pubDate>Sun, 05 Mar 2023 00:52:41 +0000</pubDate>
       
       <guid>/tags/computer-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>/tags/rust/</link>
+      <pubDate>Sun, 05 Mar 2023 00:52:41 +0000</pubDate>
+      
+      <guid>/tags/rust/</guid>
       <description></description>
     </item>
     
@@ -23,6 +41,15 @@
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
       <guid>/tags/deep-dive-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>language-functions</title>
+      <link>/tags/language-functions/</link>
+      <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
+      
+      <guid>/tags/language-functions/</guid>
       <description></description>
     </item>
     
