@@ -67,15 +67,15 @@
 		
 		
 		
-		<a href="../../about">About</a>
-		
-		
-		
 		<a href="../../tags">Tags</a>
 		
 		
 		
 		<a href="https://www.paypal.me/davincigh" target="_blank">Support</a>
+		
+		
+		
+		<a href="../../about">About</a>
 		
 		
 		| <a href="#">
@@ -90,6 +90,7 @@
 	<article>
 		<div class="title">
 			<h1 class="title">Speeding Up Rust With Mold</h1>
+			
 			<div class="meta">Posted on Mar 5, 2023
 				<span>
 					
@@ -97,6 +98,7 @@
 					
 				</span>
 			</div>
+			
 		</div>
 		
 
@@ -110,8 +112,8 @@
  is an incredible language. It&rsquo;s quite obvious when it was, as at 2022 was the most loved programming language for seven years,
 according to a <a href="https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages" target="_blank" >survey</a>
  made by <a href="https://stackoverflow.com" target="_blank" >Stack Overflow</a>
-.</p>
-<p>Guaranteeing memory-safety and thread-safety without even having a runtime or garbage collector.
+.
+Guaranteeing memory-safety and thread-safety without even having a runtime or garbage collector.
 Rust again provides us with a very smart compiler, top-notch tooling whilst being blazingly fast and highly memory-efficient.</p>
 <p>Despite all these perks, everyone who uses Rust especially in projects with lots of dependencies can attest to the fact of very long build times in Rust.
 There are many reasons for this but one of the major ones has to do with the linker it uses by default.</p>
@@ -139,7 +141,7 @@ If you want to go the prebuilt binary route, try using your package manager to i
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Ubuntu</span>
 sudo apt-get install mold
 </code></pre></div><p>If you could not install <strong>Mold</strong> from your package manager, congratulations, you are only left with one option, building from source.</p>
-<p><strong>Building From Source</strong></p>
+<h2 id="building-from-source">Building From Source</h2>
 <p><strong>Requirements</strong></p>
 <ol>
 <li>C++ 20 Compiler</li>
@@ -192,8 +194,8 @@ RUSTFLAGS<span style="color:#f92672">=</span>-Clinker<span style="color:#f92672"
 It&rsquo;s quite popular in the Rust community and is relatively easy to get started with.</p>
 <p>The code we&rsquo;re going to be using for benchmarking. It&rsquo;s not really necessary that we write any code, since the external libraries themselves have to be linked to the project.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">
-</code></pre></div><p><strong>Benchmark Results</strong></p>
-<p>I&rsquo;m on a relatively low powered Chromebook running on Chrome OS, CPU architecture aarch64, with the linux subsystem enabled.</p>
+</code></pre></div><p><strong>Results</strong></p>
+<p>I&rsquo;m on a relatively low powered Chromebook running on Chrome OS, with an <code>aarch64</code> CPU based architecture and the linux subsystem enabled. The gains will probably be greater on more power-packed systems.</p>
 <ol>
 <li>
 <p><strong>Mold</strong> =&gt;</p>
