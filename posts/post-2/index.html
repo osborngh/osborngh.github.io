@@ -28,22 +28,6 @@
 
 	
 	
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
-		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-		
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-					renderMathInElement(document.body, {
-							delimiters: [
-									{left: "$$", right: "$$", display: true},
-									{left: "$", right: "$", display: false}
-							]
-					});
-			});
-			</script>
-	
 	
 	
 		
@@ -94,7 +78,7 @@
 			<div class="meta">Posted on Mar 5, 2023
 				<span>
 					
-						- 5 minutes read
+						- 4 minutes read
 					
 				</span>
 			</div>
@@ -164,7 +148,7 @@ sudo cmake --install .
 </code></pre></div><p>When the process is done you should have a <strong>Mold</strong> installation. Add it to your PATH variable if its not already on it.</p>
 <h2 id="using-mold">Using Mold</h2>
 <p><strong>With Cargo</strong></p>
-<p>Now to use <strong>Mold</strong> with cargo, Rust&rsquo;s multipurpose tool, first create a rust project or open an existing one which you would want to use <strong>Mold</strong> as the project linker.</p>
+<p>Now to use <strong>Mold</strong> with cargo, Rust&rsquo;s multipurpose tool, first create a rust project or open an existing one in which you would want to use <strong>Mold</strong> as the project linker.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cargo new using_mold
 cd using_mold
 </code></pre></div><p>Create a new file, <code>.config/cargo.toml</code> in the project root directory. You may need to create the folder first.</p>
@@ -187,28 +171,9 @@ RUSTFLAGS<span style="color:#f92672">=</span>-Clinker<span style="color:#f92672"
 <span style="color:#75715e"># Library</span>
 RUSTFLAGS<span style="color:#f92672">=</span>-Clinker<span style="color:#f92672">=</span>/usr/bin/mold rustc --crate-type<span style="color:#f92672">=</span>lib lib.rs
 </code></pre></div><p>Note: if you got errors with the steps above, try replacing the <code>/usr/bin/mold</code> with the location of the <strong>Mold</strong> binary you built earlier.</p>
-<h2 id="benchmarking-mold">Benchmarking Mold</h2>
-<p>We&rsquo;ll be comparing the link speeds of  <strong>Mold</strong>, <strong>GNU ld</strong> and another well known linker, <strong>Clang lld</strong>.</p>
-<p>To increase the workload of the linker, we&rsquo;ll be using an external dependency. I decided to go with the <a href="www.bevyengine.org" >Bevy</a>
- library.
-It&rsquo;s quite popular in the Rust community and is relatively easy to get started with.</p>
-<p>The code we&rsquo;re going to be using for benchmarking. It&rsquo;s not really necessary that we write any code, since the external libraries themselves have to be linked to the project.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust">
-</code></pre></div><p><strong>Results</strong></p>
-<p>I&rsquo;m on a relatively low powered Chromebook running on Chrome OS, with an <code>aarch64</code> CPU based architecture and the linux subsystem enabled. The gains will probably be greater on more power-packed systems.</p>
-<ol>
-<li>
-<p><strong>Mold</strong> =&gt;</p>
-</li>
-<li>
-<p><strong>GNU ld</strong> =&gt;</p>
-</li>
-<li>
-<p><strong>Clang lld</strong> =&gt;</p>
-</li>
-</ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>The speed <strong>Mold</strong> offers increases with increasing dependencies so is observed in larger projects. Using a faster linker with Rust can improve the software development cycle.</p>
+<p>The speed <strong>Mold</strong> offers increases with increasing dependencies so is observed in larger projects. Using a faster linker with Rust can improve the software development cycle. Dont forget to checkout the <a href="https://www.github.com/rui314/mold" target="_blank" >Mold</a>
+ project repo for more info, including benchmarks and usage information.</p>
 
 		</section>
 
@@ -233,7 +198,7 @@ It&rsquo;s quite popular in the Rust community and is relatively easy to get sta
 		<div class="page-nav">
 			<div class="prev-post">
 				
-					<a href="../../posts/post-1/">← A Deep Dive Into Python - zip()</a>
+					<a href="../../posts/post-1/">← A Deeper Look At The `zip()` function</a>
 				
 			</div>
 
