@@ -6,6 +6,16 @@
     <description>Recent content in Series on The Codex Arundel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Da Vinci</copyright><atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© Da Vinci</copyright>
+    <lastBuildDate>Sat, 11 Mar 2023 12:41:25 +0000</lastBuildDate><atom:link href="/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maths For Computer Graphics</title>
+      <link>/series/maths-for-computer-graphics/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/series/maths-for-computer-graphics/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

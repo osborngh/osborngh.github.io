@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Da Vinci</copyright>
-    <lastBuildDate>Sun, 05 Mar 2023 00:52:41 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 12:41:25 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>computer-graphics</title>
+      <link>/tags/computer-graphics/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/tags/computer-graphics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linear-algebra</title>
+      <link>/tags/linear-algebra/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/tags/linear-algebra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>math</title>
+      <link>/tags/math/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Sat, 11 Mar 2023 12:41:25 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>compilers</title>
       <link>/tags/compilers/</link>
@@ -41,15 +86,6 @@
       <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
       
       <guid>/tags/language-functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Sun, 26 Feb 2023 00:52:03 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
