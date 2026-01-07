@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://osborngh.github.io/sitemap.xml
