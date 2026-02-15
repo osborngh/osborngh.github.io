@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privacy on The Long Game</title>
+    <link>http://localhost:1313/tags/privacy/</link>
+    <description>Recent content in Privacy on The Long Game</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright © 2026 - Vinci</copyright>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rich Content</title>
+      <link>http://localhost:1313/blog/2026/intro/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2026/intro/</guid>
+      <description>&lt;p&gt;As rightly captioned, what&amp;rsquo;s the point ?&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m currently in my second year of an undergraduate LLB (Bachelor of Laws) degree. Do I want to be a lawyer, probably not ? What do I want to be ? I don&amp;rsquo;t know.&#xA;All I know is I want to do something big, really big.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve always enjoyed the process of learning, teaching myself how to code a while back was the genesis for me. I would become soo engrossed in coding that I would gladly sit behind my computer for 12 hours a day. Now what was I doing?, I don&amp;rsquo;t know. What did I accomplish from that? I don&amp;rsquo;t know. But it changed me.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
